@@ -1,0 +1,159 @@
+:root {
+  color-scheme: light;
+  --background: #f7f4ef;
+  --surface: #fffdf9;
+  --surface-strong: #f0e7d8;
+  --text: #2c241d;
+  --muted: #6a5b4d;
+  --accent: #7b3f00;
+  --border: #ddcfbe;
+  --shadow: 0 18px 45px rgba(73, 52, 31, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.hero,
+main {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  padding: 4rem 0 3rem;
+  align-items: start;
+}
+
+.hero__content h1,
+.section__heading h2,
+.card h3,
+.feature h3,
+.list-item h3 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+.hero__content h1 {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+}
+
+.hero__lead {
+  max-width: 42rem;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.hero__actions a,
+.feature a {
+  display: inline-block;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.hero__card,
+.card,
+.feature,
+.list-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero__card {
+  padding: 1.75rem;
+}
+
+.hero__card-label,
+.eyebrow,
+.feature__meta,
+.list-item__meta {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.section {
+  padding: 1rem 0 2.5rem;
+}
+
+.section__heading {
+  margin-bottom: 1.25rem;
+}
+
+.section__content {
+  max-width: 52rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.4rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature,
+.list-item {
+  padding: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.contact a {
+  word-break: break-word;
+}
+
+@media (min-width: 820px) {
+  .hero {
+    grid-template-columns: minmax(0, 2.3fr) minmax(280px, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .feature {
+    flex-direction: column;
+  }
+}
